@@ -1,19 +1,25 @@
+// Captura cada elemento
 const horas = document.getElementById('horas');
-console.log('horas', horas)
 const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
 
 const relogio  = setInterval(function time(){
+
+    // Cria um novo objeto Date para obter a data e hora atuais
     let dateToday = new Date();
+
+    // Extrai as horas, minutos e segundos
     let hr = dateToday.getHours();
     let min = dateToday.getMinutes();
     let sec = dateToday.getSeconds();
 
+    // Adiciona um zero à esquerda se o número for menor que 10
     if(hr < 10) hr = '0' + hr;
     if(min < 10) min = '0' + min;
     if(sec < 10) sec = '0' + sec;
 
-    horas.textContent = dateToday.getHours(); //hr;
+    // Constroi cada bloco
+    horas.textContent = hr;
     minutos.textContent = min;
     segundos.textContent = sec;
     
